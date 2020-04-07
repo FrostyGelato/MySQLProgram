@@ -1,3 +1,4 @@
+Library Database:
 CREATE TABLE `school`.`library` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Book_name` VARCHAR(45) NOT NULL,
@@ -5,4 +6,11 @@ CREATE TABLE `school`.`library` (
   `Author_last_name` VARCHAR(45) NULL,
   `ISBN` VARCHAR(45) NOT NULL,
   `Quantity` INT(5) NOT NULL,
+  PRIMARY KEY (`ID`));
+
+Login Database:
+CREATE TABLE `school`.`login` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`ID`));
