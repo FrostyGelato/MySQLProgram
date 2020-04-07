@@ -1,0 +1,8 @@
+CREATE TABLE `school`.`library` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `Book_name` VARCHAR(45) NOT NULL,
+  `Author_first_name` VARCHAR(45) NULL,
+  `Author_last_name` VARCHAR(45) NULL,
+  `ISBN` VARCHAR(45) NOT NULL,
+  `Quantity` INT(5) NOT NULL,
+  PRIMARY KEY (`ID`));
