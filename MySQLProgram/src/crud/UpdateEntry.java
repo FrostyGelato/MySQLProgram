@@ -19,7 +19,6 @@ public class UpdateEntry {
 			stmt.setString(7, year);
 			stmt.setString(8, publisher);
 			stmt.setString(9, category);
-				
 			stmt.execute();
 		} catch (Exception e) {
 			
