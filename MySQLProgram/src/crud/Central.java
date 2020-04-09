@@ -15,6 +15,7 @@ public class Central {
 		String username = loginInfo.nextLine();
 		System.out.println("Please enter your password:");
 		String password = loginInfo.nextLine();
+		
 
 	}
 
