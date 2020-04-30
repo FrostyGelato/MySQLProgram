@@ -20,7 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JPanel {
 
 	private JFrame frame;
 	private JTextField usernameField;
@@ -81,8 +81,8 @@ public class Login extends javax.swing.JFrame {
 					if (rs.next()) {
 						JOptionPane.showMessageDialog(null, "Login successful.");
 						MainMenu menuPage = new MainMenu();
-						menuPage.setVisible(true);
 						setVisible(false);
+						menuPage.setVisible(true);
 					}
 					else {
 						JOptionPane.showMessageDialog(null, "Login failed. Please try again.");
