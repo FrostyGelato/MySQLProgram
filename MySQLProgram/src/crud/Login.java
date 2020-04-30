@@ -20,7 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 
-public class Login {
+public class Login extends javax.swing.JFrame {
 
 	private JFrame frame;
 	private JTextField usernameField;
@@ -72,21 +72,24 @@ public class Login {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost/school", "dumplings", "chup389Mb");
-					String sql = "SELECT * from login where username=? and password=?";
-					PreparedStatement pst = con.prepareStatement(sql);
+					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", "dumplings", "chup389Mb");
+					String sql = "SELECT * FROM login where username=? and password=?";
+					PreparedStatement pst = cnct.prepareStatement(sql);
 					pst.setString(1, usernameField.getText());
 					pst.setString(2, passwordField.getText());
 					ResultSet rs = pst.executeQuery();
 					if (rs.next()) {
 						JOptionPane.showMessageDialog(null, "Login successful.");
+						MainMenu menuPage = new MainMenu();
+						menuPage.setVisible(true);
+						setVisible(false);
 					}
 					else {
 						JOptionPane.showMessageDialog(null, "Login failed. Please try again.");
 						usernameField.setText("");
 						passwordField.setText("");
 					}
-					con.close();
+					cnct.close();
 				}
 				catch(Exception e) {
 					JOptionPane.showMessageDialog(null, e);

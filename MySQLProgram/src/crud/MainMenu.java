@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.table.DefaultTableModel;
 
-public class Main {
+public class MainMenu extends javax.swing.JFrame {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -34,7 +34,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Main window = new Main();
+					MainMenu window = new MainMenu();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +46,7 @@ public class Main {
 	/**
 	 * Create the application.
 	 */
-	public Main() {
+	public MainMenu() {
 		initialize();
 	}
 
@@ -57,14 +57,14 @@ public class Main {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1192, 825);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 		
 		JButton btnNewButton = new JButton("Insert");
+		btnNewButton.setBounds(121, 656, 153, 37);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(121, 656, 153, 37);
+		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Update");
@@ -100,26 +100,27 @@ public class Main {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("ISBN");
-		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel.setBounds(21, 350, 108, 29);
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Quantity");
-		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_1.setBounds(21, 406, 108, 29);
+		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Publisher");
-		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_2.setBounds(21, 462, 108, 29);
+		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Year");
-		lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_3.setBounds(21, 518, 108, 29);
+		lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		table = new JTable();
+		table.setBounds(345, 61, 800, 553);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null, null, null, null, null},
@@ -148,7 +149,6 @@ public class Main {
 		table.setToolTipText("");
 		table.setColumnSelectionAllowed(true);
 		table.setCellSelectionEnabled(true);
-		table.setBounds(345, 61, 800, 553);
 		frame.getContentPane().add(table);
 		
 		textField_4 = new JTextField();
@@ -177,28 +177,28 @@ public class Main {
 		textField_8.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Aythor last name");
-		lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_4.setBounds(21, 296, 140, 29);
+		lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Author first name");
-		lblNewLabel_5.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_5.setBounds(21, 235, 184, 29);
+		lblNewLabel_5.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Author");
-		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_6.setBounds(21, 176, 108, 29);
+		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("Book name");
-		lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_7.setBounds(21, 120, 108, 29);
+		lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_7);
 		
 		JLabel lblNewLabel_8 = new JLabel("ID");
-		lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_8.setBounds(21, 64, 108, 29);
+		lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_8);
 		
 		textField_9 = new JTextField();
@@ -207,8 +207,8 @@ public class Main {
 		textField_9.setColumns(10);
 		
 		JLabel lblNewLabel_9 = new JLabel("Category");
-		lblNewLabel_9.setFont(new Font("Arial", Font.PLAIN, 17));
 		lblNewLabel_9.setBounds(21, 568, 108, 29);
+		lblNewLabel_9.setFont(new Font("Arial", Font.PLAIN, 17));
 		frame.getContentPane().add(lblNewLabel_9);
 		
 		textField_10 = new JTextField();
@@ -217,8 +217,8 @@ public class Main {
 		textField_10.setColumns(10);
 		
 		JButton btnNewButton_4 = new JButton("Search");
-		btnNewButton_4.setFont(new Font("Arial Black", Font.PLAIN, 12));
 		btnNewButton_4.setBounds(348, 20, 90, 37);
+		btnNewButton_4.setFont(new Font("Arial Black", Font.PLAIN, 12));
 		frame.getContentPane().add(btnNewButton_4);
 	}
 }
