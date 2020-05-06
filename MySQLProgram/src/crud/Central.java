@@ -6,17 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
-public class Main {
+public class Central {
 
 	private static void createAndShowLoginGUI() {
-        JFrame frame = new JFrame("Login Window");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        Login gui = new Login();
-        frame.getContentPane().add(gui);
-
-        frame.pack();
-        frame.setVisible(true);
+		Login2 gui = new Login2();
+		gui.setVisible(true);
     }
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {

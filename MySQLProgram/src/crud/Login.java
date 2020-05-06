@@ -29,7 +29,7 @@ public class Login extends javax.swing.JPanel {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -40,7 +40,7 @@ public class Login extends javax.swing.JPanel {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the application.
