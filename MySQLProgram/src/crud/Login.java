@@ -25,7 +25,6 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
-	boolean successfulLogin;
 
 	// Create the frame
 	public Login() {
