@@ -25,7 +25,6 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
-	boolean successfulLogin;
 
 	// Create the frame
 	public Login() {
@@ -50,7 +49,9 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
-					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", "dumplings", "chup389Mb");
+					// Your MySQL username and password need to be entered below for the login to work
+					// Replace root with your username and enter your password between the ""
+					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", "root", "");
 					String sql = "SELECT * FROM login where username=? and password=?";
 					PreparedStatement pst = cnct.prepareStatement(sql);
 					pst.setString(1, usernameField.getText());
