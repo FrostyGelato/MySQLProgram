@@ -1,22 +1,23 @@
 package crud;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 public class Central {
 
+	private static void createAndShowLoginGUI() {
+		Login2 gui = new Login2();
+		gui.setVisible(true);
+    }
 	public static void main(String[] args) {
-		Scanner loginInfo = new Scanner(System.in);
-		System.out.println("You need to log in before you can continue.");
-		System.out.println("Please enter your username:");
-		String username = loginInfo.nextLine();
-		System.out.println("Please enter your password:");
-		String password = loginInfo.nextLine();
-		
-
+		SwingUtilities.invokeLater(new Runnable() {
+	        public void run() {
+	        	createAndShowLoginGUI();
+	        }
+	    });      	
 	}
-
 }
