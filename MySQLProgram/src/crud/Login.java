@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JSeparator;
 
-public class Login2 extends JFrame {
+public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField usernameField;
@@ -28,7 +28,7 @@ public class Login2 extends JFrame {
 	boolean successfulLogin;
 
 	// Create the frame
-	public Login2() {
+	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 873, 614);
 		contentPane = new JPanel();
@@ -59,7 +59,7 @@ public class Login2 extends JFrame {
 					if (rs.next()) {
 						JOptionPane.showMessageDialog(null, "Login successful.");
 						setVisible(false);
-						dbMenu mainMenu = new dbMenu();
+						DatabaseMenu mainMenu = new DatabaseMenu();
 						mainMenu.setVisible(true);
 					}
 					else {

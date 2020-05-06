@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTable;
 
-public class dbMenu extends JFrame {
+public class DatabaseMenu extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -29,7 +29,7 @@ public class dbMenu extends JFrame {
 	private JTextField textField_10;
 
 	// Create the frame.
-	public dbMenu() {
+	public DatabaseMenu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1192, 825);
 		contentPane = new JPanel();
