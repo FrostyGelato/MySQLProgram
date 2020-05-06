@@ -24,6 +24,7 @@ public class Login2 extends JFrame {
 	private JPanel contentPane;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
+	boolean successfulLogin;
 
 	/**
 	 * Launch the application.
@@ -74,9 +75,9 @@ public class Login2 extends JFrame {
 					ResultSet rs = pst.executeQuery();
 					if (rs.next()) {
 						JOptionPane.showMessageDialog(null, "Login successful.");
-						MainMenu menuPage = new MainMenu();
 						setVisible(false);
-						menuPage.setVisible(true);
+						dbMenu mainMenu = new dbMenu();
+						mainMenu.setVisible(true);
 					}
 					else {
 						JOptionPane.showMessageDialog(null, "Login failed. Please try again.");
