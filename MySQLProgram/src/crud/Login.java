@@ -1,78 +1,57 @@
 package crud;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import javax.swing.DropMode;
-import javax.swing.JSeparator;
-import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JSeparator;
 
-public class Login extends javax.swing.JPanel {
+public class Login extends JFrame {
 
-	private JFrame frame;
+	private JPanel contentPane;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login window = new Login();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
-	/**
-	 * Create the application.
-	 */
+	// Create the frame
 	public Login() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 873, 614);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 873, 614);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Library System");
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD, 40));
-		lblNewLabel.setBounds(258, 78, 328, 62);
-		frame.getContentPane().add(lblNewLabel);
+		usernameField = new JTextField();
+		usernameField.setBounds(269, 280, 296, 43);
+		contentPane.add(usernameField);
+		usernameField.setColumns(10);
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(92, 242, 686, 2);
-		frame.getContentPane().add(separator);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(269, 361, 296, 43);
+		contentPane.add(passwordField);
 		
-		JButton loginButton = new JButton("Login");
-		loginButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JButton btnNewButton = new JButton("Login");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
-					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", "dumplings", "chup389Mb");
+					// Your MySQL username and password need to be entered below for the login to work
+					// Replace root with your username and enter your password between the ""
+					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", "root", "");
 					String sql = "SELECT * FROM login where username=? and password=?";
 					PreparedStatement pst = cnct.prepareStatement(sql);
 					pst.setString(1, usernameField.getText());
@@ -80,9 +59,9 @@ public class Login extends javax.swing.JPanel {
 					ResultSet rs = pst.executeQuery();
 					if (rs.next()) {
 						JOptionPane.showMessageDialog(null, "Login successful.");
-						MainMenu menuPage = new MainMenu();
 						setVisible(false);
-						menuPage.setVisible(true);
+						DatabaseMenu mainMenu = new DatabaseMenu();
+						mainMenu.setVisible(true);
 					}
 					else {
 						JOptionPane.showMessageDialog(null, "Login failed. Please try again.");
@@ -91,21 +70,21 @@ public class Login extends javax.swing.JPanel {
 					}
 					cnct.close();
 				}
-				catch(Exception e) {
-					JOptionPane.showMessageDialog(null, e);
+				catch(Exception e1) {
+					JOptionPane.showMessageDialog(null, e1);
 				}
 			}
 		});
-		loginButton.setBounds(342, 438, 153, 37);
-		frame.getContentPane().add(loginButton);
+		btnNewButton.setBounds(342, 438, 153, 37);
+		contentPane.add(btnNewButton);
 		
-		usernameField = new JTextField();
-		usernameField.setBounds(269, 280, 296, 43);
-		frame.getContentPane().add(usernameField);
-		usernameField.setColumns(10);
+		JLabel lblNewLabel = new JLabel("Library System");
+		lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD, 40));
+		lblNewLabel.setBounds(258, 78, 328, 62);
+		contentPane.add(lblNewLabel);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(269, 361, 296, 43);
-		frame.getContentPane().add(passwordField);
+		JSeparator separator = new JSeparator();
+		separator.setBounds(92, 242, 686, 2);
+		contentPane.add(separator);
 	}
 }
