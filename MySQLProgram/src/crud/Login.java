@@ -20,6 +20,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JSeparator;
 
+import crud.Main;
+
 public class Login extends JFrame {
 
 	private JPanel contentPane;
@@ -51,7 +53,7 @@ public class Login extends JFrame {
 					Class.forName("com.mysql.jdbc.Driver");
 					// Your MySQL username and password need to be entered below for the login to work
 					// Replace root with your username and enter your password between the ""
-					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", "root", "");
+					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", Main.DB_USER, Main.DB_PASS);
 					String sql = "SELECT * FROM login where username=? and password=?";
 					PreparedStatement pst = cnct.prepareStatement(sql);
 					pst.setString(1, usernameField.getText());
