@@ -51,8 +51,6 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
-					// Your MySQL username and password need to be entered below for the login to work
-					// Replace root with your username and enter your password between the ""
 					Connection cnct = DriverManager.getConnection("jdbc:mysql://localhost/school", Main.DB_USER, Main.DB_PASS);
 					String sql = "SELECT * FROM login where username=? and password=?";
 					PreparedStatement pst = cnct.prepareStatement(sql);
