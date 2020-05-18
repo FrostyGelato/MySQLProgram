@@ -130,6 +130,14 @@ public class DatabaseMenu extends javax.swing.JFrame {
 					e1.printStackTrace();
 				}
         		CreateEntry entry = new CreateEntry(bookNameField.getText(), aFirstNameField.getText(), aLastNameField.getText(), ISBNField.getText(), quantityField.getText(), yearField.getText(), publisherField.getText(), categoryField.getText());
+        		bookNameField.setText("");
+        		aFirstNameField.setText("");
+        		aLastNameField.setText("");
+        		ISBNField.setText("");
+        		quantityField.setText("");
+        		yearField.setText("");
+        		publisherField.setText("");
+        		categoryField.setText("");
         	}
         });
         btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 24));
