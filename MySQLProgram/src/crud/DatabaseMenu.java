@@ -27,6 +27,17 @@ public class DatabaseMenu extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);// center form in the screen
     }
+    
+    public void clearAllFields() {
+    	bookNameField.setText("");
+		aFirstNameField.setText("");
+		aLastNameField.setText("");
+		ISBNField.setText("");
+		quantityField.setText("");
+		yearField.setText("");
+		publisherField.setText("");
+		categoryField.setText("");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -126,18 +137,10 @@ public class DatabaseMenu extends javax.swing.JFrame {
         		try {
 					Connection con = DBConnect.getConnection();
 				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
         		CreateEntry entry = new CreateEntry(bookNameField.getText(), aFirstNameField.getText(), aLastNameField.getText(), ISBNField.getText(), quantityField.getText(), yearField.getText(), publisherField.getText(), categoryField.getText());
-        		bookNameField.setText("");
-        		aFirstNameField.setText("");
-        		aLastNameField.setText("");
-        		ISBNField.setText("");
-        		quantityField.setText("");
-        		yearField.setText("");
-        		publisherField.setText("");
-        		categoryField.setText("");
+        		clearAllFields();
         	}
         });
         btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 24));
@@ -149,10 +152,21 @@ public class DatabaseMenu extends javax.swing.JFrame {
         btnNewButton_1.setBounds(467, 651, 153, 37);
         jPanel2.add(btnNewButton_1);
         
-        JButton btnNewButton_2 = new JButton("Delete");
-        btnNewButton_2.setFont(new Font("Rockwell", Font.PLAIN, 24));
-        btnNewButton_2.setBounds(679, 651, 153, 37);
-        jPanel2.add(btnNewButton_2);
+        JButton deletedButton = new JButton("Delete");
+        deletedButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		/*try {
+					Connection con = DBConnect.getConnection();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+        		DeleteEntry entry2 = new DeleteEntry(id);
+        		clearAllFields();*/
+        	}
+        });
+        deletedButton.setFont(new Font("Rockwell", Font.PLAIN, 24));
+        deletedButton.setBounds(679, 651, 153, 37);
+        jPanel2.add(deletedButton);
         
         JButton btnNewButton_3 = new JButton("New");
         btnNewButton_3.setFont(new Font("Rockwell", Font.PLAIN, 24));
