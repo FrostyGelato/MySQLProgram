@@ -134,11 +134,11 @@ public class DatabaseMenu extends javax.swing.JFrame {
         JButton btnNewButton = new JButton("Insert");
         btnNewButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		try {
+        		/*try {
 					Connection con = DBConnect.getConnection();
 				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
+					System.out.println(e1);
+				}*/
         		CreateEntry entry = new CreateEntry(bookNameField.getText(), aFirstNameField.getText(), aLastNameField.getText(), ISBNField.getText(), quantityField.getText(), yearField.getText(), publisherField.getText(), categoryField.getText());
         		clearAllFields();
         	}
@@ -157,11 +157,11 @@ public class DatabaseMenu extends javax.swing.JFrame {
         	public void actionPerformed(ActionEvent arg0) {
         		/*try {
 					Connection con = DBConnect.getConnection();
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-        		DeleteEntry entry2 = new DeleteEntry(id);
-        		clearAllFields();*/
+				} catch (SQLException e2) {
+					System.out.println(e2);
+				}*/
+        		DeleteEntry entry2 = new DeleteEntry("1");
+        		clearAllFields();
         	}
         });
         deletedButton.setFont(new Font("Rockwell", Font.PLAIN, 24));

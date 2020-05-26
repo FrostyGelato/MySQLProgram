@@ -13,7 +13,7 @@ public class DeleteEntry {
 			stmt.execute();
 			conn.close();
 		} catch (Exception e) {
-				
+			System.out.println(e);
 		}
 	}
 }

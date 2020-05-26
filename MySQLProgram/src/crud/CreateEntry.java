@@ -18,8 +18,9 @@ public class CreateEntry {
 			stmt.setString(8, category);
 				
 			stmt.execute();
+			conn.close();
 		} catch (Exception e) {
-				
+			System.out.println(e);
 		}
 	}
 }
