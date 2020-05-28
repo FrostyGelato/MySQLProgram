@@ -148,6 +148,12 @@ public class DatabaseMenu extends javax.swing.JFrame {
         jPanel2.add(btnNewButton);
         
         JButton btnNewButton_1 = new JButton("Update");
+        btnNewButton_1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		// testing updating entry function
+        		UpdateEntry entry3 = new UpdateEntry("3", bookNameField.getText(), aFirstNameField.getText(), aLastNameField.getText(), ISBNField.getText(), quantityField.getText(), yearField.getText(), publisherField.getText(), categoryField.getText());
+        	}
+        });
         btnNewButton_1.setFont(new Font("Rockwell", Font.PLAIN, 24));
         btnNewButton_1.setBounds(467, 651, 153, 37);
         jPanel2.add(btnNewButton_1);
